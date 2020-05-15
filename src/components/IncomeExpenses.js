@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
+import { currencyFormat } from '../helpers/helpers'; 
 
 export const IncomeExpenses = () => {
   const { transactions } = useContext(GlobalContext);
@@ -14,11 +15,11 @@ export const IncomeExpenses = () => {
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
-        <p className="money plus">${income}</p>
+        <p className="money plus">{currencyFormat(income)}</p>
       </div>
       <div>
         <h4>Expense</h4>
-        <p className="money minus">${expense}</p>
+        <p className="money minus">{currencyFormat(expense)}</p>
       </div>
     </div>
   )
