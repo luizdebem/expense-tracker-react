@@ -10,7 +10,7 @@ export const Transaction = ({ transaction }) => { // Desestruturação é do car
   return (
     <li className={sign === '-' ? 'minus' : 'plus'}>
       {transaction.text} <span>{currencyFormat(Math.abs(transaction.amount))}</span>
-      <button onClick={() => deleteTransaction(transaction.id)} className="delete-btn">x</button>
+      <button onClick={() => deleteTransaction(transaction._id)} className="delete-btn">x</button>
     </li>
   )
 }
