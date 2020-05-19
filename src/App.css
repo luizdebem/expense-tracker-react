@@ -149,3 +149,15 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+.no-transactions {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.no-transactions span {
+  margin: auto
+}
