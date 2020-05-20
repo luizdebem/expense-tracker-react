@@ -15,9 +15,17 @@ export const GlobalContext = createContext(initialState); // até aí tudo bem
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
+  const startLoader = () => {
+    dispatch({
+      type: 'START_LOADER',
+      payload: null
+    });
+  }
+
   // ACTIONS
   const getTransactions = async () => {
     try {
+      startLoader();
       const res = await axios.get('/api/v1/transactions');
 
       dispatch({
@@ -34,6 +42,7 @@ export const GlobalProvider = ({ children }) => {
 
   const deleteTransaction = async (id) => {
     try {
+      startLoader();
       await axios.delete(`/api/v1/transactions/${id}`);
       dispatch({
         type: 'DELETE_TRANSACTION',
@@ -55,6 +64,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
     try {
+      startLoader();
       const res = await axios.post('/api/v1/transactions', transaction, config);
       dispatch({
         type: 'ADD_TRANSACTION',
