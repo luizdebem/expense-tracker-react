@@ -47,6 +47,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+  transition: 0.3s;
 }
 
 .inc-exp-container > div {
@@ -160,4 +161,16 @@ input[type='number'] {
 
 .no-transactions span {
   margin: auto
+}
+
+.transaction-list {
+  transition: 0.3s;
+}
+
+.your-balance {
+  transition: 0.3s;
+}
+
+.loading {
+  opacity: 50%;
 }

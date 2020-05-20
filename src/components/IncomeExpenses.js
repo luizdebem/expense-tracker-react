@@ -3,7 +3,7 @@ import { GlobalContext } from '../context/GlobalState';
 import { currencyFormat } from '../helpers/helpers'; 
 
 export const IncomeExpenses = () => {
-  const { transactions } = useContext(GlobalContext);
+  const { transactions, loading } = useContext(GlobalContext);
   const amounts = transactions.map(transaction => transaction.amount);
   const income = amounts.filter(item => item > 0)
     .reduce((acc, item) => (acc += item), 0);
@@ -12,7 +12,7 @@ export const IncomeExpenses = () => {
   .reduce((acc, item) => (acc += item), 0));
 
   return (
-    <div className="inc-exp-container">
+    <div className={loading ? 'inc-exp-container loading' : 'inc-exp-container'}>
       <div>
         <h4>Income</h4>
         <p className="money plus">{currencyFormat(income)}</p>

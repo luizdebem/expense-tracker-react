@@ -6,7 +6,7 @@ import { GlobalContext } from '../context/GlobalState';
 import { NoTransactions } from './warnings/NoTransactions';
 
 export const TransactionList = () => {
-  const { transactions, getTransactions } = useContext(GlobalContext);
+  const { transactions, getTransactions, loading } = useContext(GlobalContext);
 
   useEffect(() => {
     getTransactions();
@@ -24,10 +24,10 @@ export const TransactionList = () => {
   }
 
   return (
-    <>
+    <div className={loading ? 'transaction-list loading' : 'transaction-list'}>
       <h3>History</h3>
       {hasTransactions && <List/>}
       {!hasTransactions && <NoTransactions/>}
-    </>
+    </div>
   )
 }
