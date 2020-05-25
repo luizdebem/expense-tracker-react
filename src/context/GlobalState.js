@@ -78,9 +78,31 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
+  const editTransaction = async (id, newTransaction) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    try {
+      startLoader();
+      const res = await axios.patch(`/api/v1/transactions/${id}`, newTransaction, config);
+      dispatch({
+        type: 'EDIT_TRANSACTION',
+        payload: res.data.data
+      });
+    } catch (error) {
+      dispatch({
+        type: 'TRANSACTION_ERROR',
+        payload: error.response.data.error
+      });
+    }
+  }
+
   return (
     <GlobalContext.Provider value={{
-      transactions: state.transactions, error: state.error, loading: state.loading, getTransactions, deleteTransaction, addTransaction
+      transactions: state.transactions, error: state.error, loading: state.loading, getTransactions, deleteTransaction, addTransaction, editTransaction
     }}>
       {children}
     </GlobalContext.Provider>)

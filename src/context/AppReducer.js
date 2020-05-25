@@ -1,6 +1,6 @@
 // AppReducer: ações que modificam o state
 export default (state, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'START_LOADER':
       return {
         ...state,
@@ -23,6 +23,12 @@ export default (state, action) => {
         ...state,
         loading: false,
         transactions: [...state.transactions, action.payload]
+      }
+    case 'EDIT_TRANSACTION':
+      return {
+        ...state,
+        transactions: [...state.transactions, action.payload],
+        loading: false
       }
     case 'TRANSACTION_ERROR':
       return {
