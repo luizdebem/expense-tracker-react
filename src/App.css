@@ -112,7 +112,7 @@ input[type='number'] {
   margin-bottom: 40px;
 }
 
-.list li, .list div {
+.list li {
   background-color: #fff;
   box-shadow: var(--box-shadow);
   color: #333;
@@ -177,4 +177,18 @@ input[type='number'] {
 
 .hidden {
   display: none !important;
+}
+
+.form-edit {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form-edit .btn {
+  margin-bottom: 10px;
 }

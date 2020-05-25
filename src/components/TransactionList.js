@@ -26,6 +26,7 @@ export const TransactionList = () => {
   return (
     <div className={loading ? 'transaction-list loading' : 'transaction-list'}>
       <h3>History</h3>
+      To update a transaction, click on it!
       {hasTransactions && <List/>}
       {!hasTransactions && <NoTransactions/>}
     </div>

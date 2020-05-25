@@ -29,19 +29,15 @@ export const Transaction = ({ transaction }) => { // Desestruturação é do car
         <button onClick={() => deleteTransaction(transaction._id)} className="delete-btn">x</button>
       </li>
 
-      <div className={detailsToggle ? 'list details' : 'hidden'}>
+      <div className={detailsToggle ? 'form-edit' : 'hidden'}>
         <form onSubmit={onSubmit}>
-          <div className="form-control">
-            <label htmlFor="text">Description</label>
-            <input type="text" defaultValue={transaction.text} onChange={(e) => setText(e.target.value)} placeholder="Enter transaction's description"></input>
-          </div>
+          <label htmlFor="text">New description</label>
+          <input type="text" defaultValue={transaction.text} onChange={(e) => setText(e.target.value)} placeholder="Enter transaction's description"></input>
 
-          <div className="form-control">
-            <label htmlFor="amount">Amount<br />(negative - expense, positive - income)</label>
-            <input type="number" defaultValue={transaction.amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount"></input>
-          </div>
+          <label htmlFor="amount">New amount<br />(negative - expense, positive - income)</label>
+          <input type="number" step="any" defaultValue={transaction.amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount"></input>
 
-          <button className="btn">Add transaction</button>
+          <button className="btn">Update transaction</button>
         </form>
       </div>
     </>
