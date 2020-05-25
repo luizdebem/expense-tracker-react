@@ -17,16 +17,18 @@ export const TransactionList = () => {
   
   const List = () => {
     return (
-      <ul className="list">
-        {transactions.map(transaction => (<Transaction key={transaction._id} transaction={transaction} />))}
-      </ul>
+      <>
+        <span>To update a transaction, click on it!</span>
+        <ul className="list">
+          {transactions.map(transaction => (<Transaction key={transaction._id} transaction={transaction} />))}
+        </ul>
+      </>
     )
   }
 
   return (
     <div className={loading ? 'transaction-list loading' : 'transaction-list'}>
       <h3>History</h3>
-      To update a transaction, click on it!
       {hasTransactions && <List/>}
       {!hasTransactions && <NoTransactions/>}
     </div>
