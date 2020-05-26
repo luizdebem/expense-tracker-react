@@ -2,6 +2,13 @@
 ### ✏ Repositório com o meu acompanhamento de uma aula de React e Context API.<br>O projeto é uma aplicação full-stack (MERN) simples de histórico de despesas ($).
 ### ✏ API: https://github.com/luizdebem/expense-tracker-api
 
+### 💡 Coisas que eu adicionei ao projeto (além do tutorial):
+<ul>
+	<li>Warning card caso não tenha transações na lista;</li>
+	<li>Animação de loading maneira durante as requisições ao banco;</li>
+	<li>Funcionalidade de editar uma transação</li>
+</ul>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
