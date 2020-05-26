@@ -26,7 +26,6 @@ export const Transaction = ({ transaction }) => { // Desestruturação é do car
     <>
       <li onClick={() => setToggle(!detailsToggle)} className={sign === '-' ? 'minus' : 'plus'}>
         {transaction.text} <span>{currencyFormat(Math.abs(transaction.amount))}</span>
-        <button onClick={() => deleteTransaction(transaction._id)} className="delete-btn">x</button>
       </li>
 
       <div className={detailsToggle ? 'form-edit' : 'hidden'}>
@@ -37,7 +36,8 @@ export const Transaction = ({ transaction }) => { // Desestruturação é do car
           <label htmlFor="amount">New amount<br />(negative - expense, positive - income)</label>
           <input type="number" step="any" defaultValue={transaction.amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount"></input>
 
-          <button className="btn">Update transaction</button>
+          <button type="submit" className="btn">Update transaction</button>
+          <button onClick={() => deleteTransaction(transaction._id)} className="btn delete">Delete transaction</button>
         </form>
       </div>
     </>

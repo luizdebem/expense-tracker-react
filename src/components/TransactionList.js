@@ -18,7 +18,7 @@ export const TransactionList = () => {
   const List = () => {
     return (
       <>
-        <span>To update a transaction, click on it!</span>
+        <span>To update or delete a transaction, click on it!</span>
         <ul className="list">
           {transactions.map(transaction => (<Transaction key={transaction._id} transaction={transaction} />))}
         </ul>
