@@ -34,7 +34,7 @@ export const Transaction = ({ transaction }) => { // Desestruturação é do car
           <input type="text" defaultValue={transaction.text} onChange={(e) => setText(e.target.value)} placeholder="Enter transaction's description"></input>
 
           <label htmlFor="amount">New amount<br />(negative - expense, positive - income)</label>
-          <input type="number" step="any" defaultValue={transaction.amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount"></input>
+          <input type="tel" step="any" defaultValue={transaction.amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount"></input>
 
           <button type="submit" className="btn">Update transaction</button>
           <button onClick={() => deleteTransaction(transaction._id)} className="btn delete">Delete transaction</button>
